@@ -223,7 +223,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="bg-slate-50 border border-slate-200 rounded-3xl overflow-hidden hover:shadow-lg transition-all flex flex-col">
               <div className="relative h-48 w-full">
-                <Image src="/deviceManager.webp" alt="Inside the Device Manager" fill className="object-cover" />
+                <Image src="/deviceManager.webp" alt="Inside the Device Manager" fill className="object-cover" priority />
               </div>
               <div className="p-8 flex-1">
                 <h3 className="text-xl font-bold text-slate-900 mb-4">Inside the Device Manager</h3>

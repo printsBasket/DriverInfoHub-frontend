@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.driverinfohub.com'),
   icons: {
     icon: '/logo1.png',
+    apple: '/assets/images/apple-touch-icon.png',
   },
   alternates: { canonical: '/' },
   robots: {
@@ -49,12 +50,20 @@ export const metadata: Metadata = {
     description: 'Your trusted resource for understanding device drivers, troubleshooting issues, and finding clear answers without technical complexity.',
     images: ['/assets/images/og-image.png'],
   },
-
+  other: {
+    // Preload critical images for faster loading
+    'preload-images': '/logo.png,/logo1.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
+      <head>
+        {/* Preload critical images */}
+        <link rel="preload" as="image" href="/logo.png" />
+        <link rel="preload" as="image" href="/logo1.png" />
+      </head>
       <body className="min-h-screen bg-slate-50 text-slate-900">
         <Script
           id="cookieyes"
