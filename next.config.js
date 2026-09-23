@@ -2,7 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
+  output: 'export', // Enable static export for Cloudflare Pages
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: 'https',

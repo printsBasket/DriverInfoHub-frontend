@@ -2,6 +2,13 @@ import Seo from '../../../components/Seo'
 import { ChevronRight, HelpCircle, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
 
+// Generate static paths for all knowledge articles
+export async function generateStaticParams() {
+  return Object.keys(contentMap).map((slug) => ({
+    slug: slug,
+  }))
+}
+
 const contentMap: Record<string, string> = {
   'printer': `<h2>Device Prints Blank or Garbled Pages</h2><p>When your printer outputs blank pages, garbled text, or corrupted images, the problem is almost always a driver issue. The printer hardware itself is usually fine — the operating system just cannot communicate with it correctly.</p><h3>Why This Happens</h3><p>Printer drivers translate your documents from digital formats into instructions the printer hardware understands. If the driver is outdated, corrupted, or incompatible with your operating system version, the translation breaks down. You might get blank pages, text that looks like random characters, images that do not render, or colors that are completely wrong.</p><h3>The Fix (Step by Step)</h3><ol><li><strong>Identify your exact printer model.</strong> Look at the physical device or check your system settings. Do not guess — download the wrong driver and the problem gets worse.</li><li><strong>Go to the manufacturer's website directly.</strong> Do not use generic driver download sites. Visit HP, Canon, Brother, Epson, Xerox, or whoever made your printer and find the official support page.</li><li><strong>Download the latest driver for your operating system version.</strong> Windows 10 and Windows 11 require different drivers. macOS Big Sur and Monterey have different requirements. Make sure you get the exact match.</li><li><strong>Uninstall the existing printer driver.</strong> Go to Settings → Devices → Printers &amp; Scanners (Windows) or System Preferences → Printers &amp; Scanners (macOS). Right-click your printer and select Remove. Check the option to remove the driver software too, if available.</li><li><strong>Restart your computer.</strong> A full restart clears the printer queue and forces the operating system to forget the old driver.</li><li><strong>Install the new driver.</strong> Run the installer you downloaded from the manufacturer.</li><li><strong>Restart again.</strong> Then test with a simple document.</li></ol><h3>If It Still Does Not Work</h3><p>Try a different USB cable if you have one. Cables wear out. If you are using Wi-Fi printing, restart both the printer and your router, then re-add the printer to your system as a new device.</p>`,
   

@@ -1,6 +1,34 @@
 import Seo from '../../../components/Seo'
 import Link from 'next/link'
 
+// Generate static paths for all driver categories
+export async function generateStaticParams() {
+  const categories = [
+    'audio',
+    'bluetooth',
+    'bluetooth-drivers',
+    'chipset',
+    'graphics',
+    'graphics-drivers',
+    'input-devices',
+    'kernel-mode',
+    'network',
+    'network-drivers',
+    'printer',
+    'scanner',
+    'storage',
+    'system',
+    'usb',
+    'usb-drivers',
+    'user-mode',
+    'virtual-devices',
+  ]
+
+  return categories.map((category) => ({
+    category: category,
+  }))
+}
+
 export default async function DriversCategory({ params }: { params: Promise<{ category: string }> }){
   const name = (await params).category.replace(/-/g, ' ')
   const sampleItems = [
