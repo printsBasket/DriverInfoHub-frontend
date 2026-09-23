@@ -1,0 +1,11 @@
+name = "driverinfohub-frontend"
+compatibility_date = "2024-01-01"
+
+pages_build_output_dir = "out"
+
+# Environment variables
+[env.production]
+vars = { NEXT_PUBLIC_BACKEND_URL = "https://driverinfohubbackend.vercel.app" }
+
+[env.preview]
+vars = { NEXT_PUBLIC_BACKEND_URL = "https://driverinfohubbackend.vercel.app" }
